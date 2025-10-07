@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 200px;
+            background-color: red;
+            border: none;
+            margin-top: 20px;
+            padding: 10px;
+            color: white;
+            position: relative;
+            left: 45%;
+            border-radius: 10px;
+        }
+
+        img {
+            width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <img src="IMG_FOLDER/porsche-911-targa_1539108158.jpg.webp" width="100%" height="10%" id="img" alt="">
+    </div>
+    <button>Change img</button>
+
+    <script>
+
+        let button = document.querySelector("button");
+
+        button.addEventListener("click", (e) => {
+
+            let img_tag = document.getElementById("img");
+            console.log(img_tag.src);
+            if (img_tag.src.match("IMG_FOLDER/porsche-911-targa_1539108158.jpg.webp")) {
+                img_tag.src = "IMG_FOLDER/lighting_maqueen.png";
+            } else if (img_tag.src.match("IMG_FOLDER/lighting_maqueen.png")) {
+                img_tag.src = "IMG_FOLDER/free-photo-of-ford-mustang-mach-1-against-industrial-brick-wall.jpeg.jpg";
+            } else if (img_tag.src.match("IMG_FOLDER/free-photo-of-ford-mustang-mach-1-against-industrial-brick-wall.jpeg.jpg")) {
+                img_tag.src = "IMG_FOLDER/20238594370_72b544330f_o.jpg";
+            } else {
+                img_tag.src = "IMG_FOLDER/porsche-911-targa_1539108158.jpg.webp";
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
